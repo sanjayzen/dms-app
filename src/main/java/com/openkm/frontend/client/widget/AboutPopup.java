@@ -139,7 +139,8 @@ public class AboutPopup extends DialogBox implements ClickHandler {
 	public void show() {
 		setText(Main.i18n("about.label"));
 		text.setHTML(msg);
-		logo.setUrl("img/logo_openkm.gif");
+/*		logo.setUrl("img/logo_openkm.gif");*/
+		logo.setUrl("img/img/NepalPolice.gif");
 		reset();
 		super.show();
 	}
