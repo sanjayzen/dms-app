@@ -164,7 +164,8 @@
   <u:constantsMap className="com.openkm.core.Config" var="Config"/>
   <div id="login-container">
     <div class="login-title">
-      <img id="login-image" class="img-responsive center-block" src="img/logo_login.gif">
+<!--       <img id="login-image" class="img-responsive center-block" src="img/logo_login.gif"> -->
+      <img id="login-image" class="img-responsive center-block" src="img/NepalPolicelogo.jpg">
     </div>
     <div class="block remove-margin" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
       <form name="loginform" method="post" action="j_spring_security_check" onsubmit="setCookie()"
