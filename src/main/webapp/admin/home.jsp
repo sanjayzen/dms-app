@@ -19,18 +19,18 @@
     <c:when test="${isAdmin}">
       <ul id="breadcrumb">
         <li class="path">
-          <a href="home.jsp">OpenKM Administration</a>
+          <a href="home.jsp">NP-DMS Administration</a>
         </li>
       </ul>
       <br/>
       <table width="234px" class="form" style="margin-top: 25px">
-        <tr><td><b>OpenKM - Knowledge Management</b></td></tr>
-        <tr><td nowrap="nowrap">Version: <%=WarUtils.getAppVersion() %></td></tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr><td>&copy; 2006-2018 OpenKM</td></tr>
+        <tr><td><b>NP - Document Management</b></td></tr>
+<%--         <tr><td nowrap="nowrap">Version: <%=WarUtils.getAppVersion() %></td></tr>
+        <tr><td>&nbsp;</td></tr> --%>
+        <tr><td>&copy; नेपाल पुलिस विभाग 2019</td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td><b>Support</b></td></tr>
-        <tr><td><a target="_blank" href="http://forum.openkm.com/">http://forum.openkm.com</a></td></tr>
+        <tr><td><a target="_blank" href="http://www.auisy.com/">http://www.auisy.com</a></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td><b>Installation ID</b></td></tr>
         <tr><td nowrap="nowrap"><%=OKMRepository.getInstance().getRepositoryUuid(null)%></td></tr>
