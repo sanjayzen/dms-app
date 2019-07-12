@@ -142,7 +142,8 @@
   <title><%=Config.TEXT_TITLE%></title>
 </head>
 <body onload="document.forms[0].elements[0].focus()">
-  <div id="openkmNews" class="openkm-news">
+<!--  Following code has been commented out to remove News Window -->
+<!--   <div id="openkmNews" class="openkm-news">
     <div id="openkmVersion" class="openkm-version">
       <strong>Community Version customized by Sanjay Zende</strong>
       <div id="stickerController" class="openkm-sticker" style="display:none;">
@@ -153,7 +154,7 @@
       </div>
     </div>
     <div style="display:none;" id="feedContainer" class="vticker"></div>
-  </div>
+  </div> -->
   
   <div id="login-background" class="background-zen">
     <div id="col-xs-12" class="hidden-xs hidden-sm hidden-md" style="height:100%;">
