@@ -65,8 +65,7 @@ public class AboutPopup extends DialogBox implements ClickHandler {
 		vPanel = new VerticalPanel();
 		text = new HTML();
 		button = new Button(Main.i18n("button.close"), this);
-//		logo = new Image("img/logo_openkm.gif");
-		logo = new Image("img/NepalPolice.gif");
+		logo = new Image("img/logo_openkm.gif");
 
 		vPanel.setWidth("300px");
 		vPanel.setHeight("195px");
@@ -139,8 +138,7 @@ public class AboutPopup extends DialogBox implements ClickHandler {
 	public void show() {
 		setText(Main.i18n("about.label"));
 		text.setHTML(msg);
-/*		logo.setUrl("img/logo_openkm.gif");*/
-		logo.setUrl("img/img/NepalPolice.gif");
+		logo.setUrl("img/logo_openkm.gif");
 		reset();
 		super.show();
 	}
