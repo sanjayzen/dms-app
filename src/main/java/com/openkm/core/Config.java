@@ -675,7 +675,8 @@ public class Config {
 	public static Properties load(ServletContext sc) {
 		Properties config = new Properties();
 		String configFile = HOME_DIR + File.separator + OPENKM_CONFIG;
-		CONTEXT = sc.getContextPath().isEmpty() ? "" : sc.getContextPath().substring(1);
+		//CONTEXT = sc.getContextPath().isEmpty() ? "" : sc.getContextPath().substring(1);
+		CONTEXT = "OpenKM";
 
 		// Initialize DTD location
 		// TODO Add trailing "/" when upgrade to Tomcat 8 => "WEB-INF/classes/dtd/"
