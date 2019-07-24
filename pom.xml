@@ -962,7 +962,7 @@
   </dependencies>
 
   <build>
-    <finalName>OpenKM</finalName>
+    <finalName>dms</finalName>
     <outputDirectory>war/WEB-INF/classes</outputDirectory>
     <plugins>
       <plugin>
@@ -1019,7 +1019,7 @@
         </property>
       </activation>
       <build>
-        <finalName>OpenKM</finalName>
+        <finalName>dms</finalName>
 
         <plugins>
           <plugin>
