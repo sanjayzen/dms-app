@@ -59,13 +59,13 @@ public class MainMenu extends Composite {
 	private static final int OUTPUT_CSV = 4;
 
 	// URI CONSTANTS
-	public static final String URI_HELP = "http://www.openkm.com";
-	public static final String URI_BUG_REPORT = "http://issues.openkm.com";
-	public static final String URI_SUPPORT_REQUEST = "http://www.openkm.com/Contact/";
-	public static final String URI_PUBLIC_FORUM = "http://forum.openkm.com";
-	public static final String URI_PROJECT_WEB = "http://www.openkm.com";
-	public static final String URI_DOCUMENTATION = "http://wiki.openkm.com";
-	public static final String URI_VERSION_CHANGES = "http://wiki.openkm.com/index.php/Changelog";
+	public static final String URI_HELP = "http://www.auisy.com";
+	public static final String URI_BUG_REPORT = "http://www.auisy.com";
+	public static final String URI_SUPPORT_REQUEST = "http://www.auisy.com/";
+	public static final String URI_PUBLIC_FORUM = "http://www.auisy.com";
+	public static final String URI_PROJECT_WEB = "http://www.auisy.com";
+	public static final String URI_DOCUMENTATION = "http://www.auisy.com";
+	public static final String URI_VERSION_CHANGES = "http://www.auisy.com";
 
 	private ToolBarOption mainMenuOption;
 	public Bookmark bookmark;

@@ -44,9 +44,9 @@ public class AboutPopup extends DialogBox implements ClickHandler {
 	private HTML htmlExtVersion;
 	private Button button;
 	private String msg = "<b>Be Open, my friend!</b><br>";
-	private String copy = "&nbsp;&copy 2006-2018 OpenKM <br><br>";
-	private String team = "<b>OpenKM Team</b><br><br>";
-	private String web = "<a href=\"http://www.openkm.com\" target=\"_blank\">http://www.openkm.com</a><br><br>";
+	private String copy = "&nbsp;&copy नेपाल पुलिस विभाग 2019 <br><br>";
+	private String team = "<b>Nepal Police Team</b><br><br>";
+	private String web = "<a href=\"http://www.auisy.com\" target=\"_blank\">http://www.auisy.com</a><br><br>";
 	private String appVersion = "Version 0.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 	private String extVersion = "With Default Extension&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 	private Futurama futurama;
