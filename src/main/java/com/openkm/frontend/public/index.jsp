@@ -17,7 +17,7 @@
 		<meta http-equiv="Cache-Control" content="no-cache" />
     	<meta http-equiv="Pragma" content="no-cache" />
     	<meta http-equiv="Expires" content="0" />
-		<link rel="Shortcut icon" href="../logo/favicon">
+		<link rel="Shortcut icon" type="image/ico" href="../img/logo_favicon.ico" />
 		<link type="text/css" rel="stylesheet" href="styles.css" title="default">
 		<link type="text/css" rel="alternate stylesheet" href="mediumfont.css" title="mediumfont">
 		<link type="text/css" rel="alternate stylesheet" href="bigfont.css" title="bigfont">
