@@ -37,20 +37,27 @@ public class LeaveManagementServlet extends BaseServlet {
 		ServletContext sc = getServletContext();
 		List<LeaveType> leaveType = null;
 		List<User> userList = null;
-
-		System.out.println("-----------------------START----------------------------");
+		List<LeaveDetail> pendingLeaveList = null;
+		List<LeaveDetail> appliedLeave = null;
+		String userName = null;
+		List<HttpSessionInfo> sess = HttpSessionManager.getInstance().getSessions();
+		for (HttpSessionInfo info : sess) {
+			userName = info.getUser();
+		}
 		
 		try {
 			leaveType = LeaveTypeDAO.findLeaveType();
 			userList = AuthDAO.findAllUsers(true);
+			pendingLeaveList = LeaveDetailDAO.findPendingLeave(userName);
+			appliedLeave = LeaveDetailDAO.findByUserId(userName);
 		} catch (DatabaseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		sc.setAttribute("leaveType", leaveType);
 		sc.setAttribute("userList", userList);
-
-		System.out.println("-----------------------END----------------------------");
+		sc.setAttribute("pendingLeaveList", pendingLeaveList);
+		sc.setAttribute("appliedLeave", appliedLeave);
 		sc.getRequestDispatcher("/admin/leave_management.jsp").forward(request, response);
 
 	}
@@ -60,9 +67,11 @@ public class LeaveManagementServlet extends BaseServlet {
 
 		log.debug("doPost({}, {})", request, response);
 		ServletContext sc = getServletContext();
-
-		System.out.println("-----------------------START----------------------------");
 		String action = WebUtils.getString(request, "action");
+		List<LeaveType> leaveType = null;
+		List<User> userList = null;
+		List<LeaveDetail> pendingLeaveList = null;
+		List<LeaveDetail> appliedLeave = null;
 		if (action.equals("AddLeave")) {
 			LeaveDetail leave = new LeaveDetail();
 			List<HttpSessionInfo> sess = HttpSessionManager.getInstance().getSessions();
@@ -87,12 +96,20 @@ public class LeaveManagementServlet extends BaseServlet {
 			leave.setToDate(toDate);
 			try {
 				LeaveDetailDAO.create(leave);
+				pendingLeaveList = LeaveDetailDAO.findPendingLeave(userName);
+				appliedLeave = LeaveDetailDAO.findByUserId(userName);
+				leaveType = LeaveTypeDAO.findLeaveType();
+				userList = AuthDAO.findAllUsers(true);
+				sc.setAttribute("leaveType", leaveType);
+				sc.setAttribute("userList", userList);
+				sc.setAttribute("pendingLeaveList", pendingLeaveList);
+				sc.setAttribute("appliedLeave", appliedLeave);
 			} catch (DatabaseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 		}
-		System.out.println("-----------------------END----------------------------");
 		sc.getRequestDispatcher("/admin/leave_management.jsp").forward(request, response);
     	
     }
