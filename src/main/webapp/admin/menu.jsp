@@ -59,6 +59,11 @@
         <img src="img/toolbar/profile.png">
       </a>
     </li>
+    	<li>
+      <a target="frame" href="Leave"  title="Leave">
+        <img src="img/toolbar/leave-mgmt.png">
+      </a>
+    </li>
     <c:if test="${isMultipleInstancesAdmin}">
       <li>
         <a target="frame" href="DatabaseQuery" title="Database query">
