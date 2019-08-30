@@ -394,6 +394,10 @@
     <servlet-class>com.openkm.servlet.admin.AuthServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>LeaveServlet</servlet-name>
+    <servlet-class>com.openkm.servlet.admin.LeaveManagementServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>PropertyGroupsServlet</servlet-name>
     <servlet-class>com.openkm.servlet.admin.PropertyGroupsServlet</servlet-class>
   </servlet>
@@ -834,6 +838,10 @@
   <servlet-mapping>
     <servlet-name>AuthServlet</servlet-name>
     <url-pattern>/admin/Auth</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LeaveServlet</servlet-name>
+    <url-pattern>/admin/Leave</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>PropertyGroupsServlet</servlet-name>
