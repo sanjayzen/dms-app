@@ -16,6 +16,21 @@
    	$(document).ready(function() {
    	 $('select#uc_profile').chosen({disable_search_threshold : 10 });
    	});
+	
+	function postReq(action, commentId, leaveId) {
+		var frm = document.getElementById('post_req');
+		var acomment = document.getElementById(commentId);
+		if (frm) {
+				var sAction = document.getElementById("action");
+				sAction.value = action;
+				var leaveIdElmt = document.getElementById("leave_id");
+				leaveIdElmt.value = leaveId;
+				var acommentElmt = document.getElementById("approver_comment");
+				acommentElmt.value = acomment.value;
+		} 
+			frm.submit();
+	}
+	
    </script>
   <title>Leave Management</title>
   
@@ -82,31 +97,47 @@
           </tr>
         </table>
 		
+	</form>
+	
+	<form action="Leave" method="post" id='post_req'>
+		<input type="hidden" name="action" id="action" value="APPROVE"/>
+		<input type="hidden" name="leave_id" id="leave_id" value=""/>
+		<input type="hidden" name="approver_comment" id="approver_comment" value=""/>
+
 		<h3>Leaves for Approval:</h3>
-		<table id="results" class="results-old" width="60%">
+		<table id="results" class="results-old" width="80%">
           <thead>
             <tr>
               <th width="10%">Leave Type</th>
               <th width="10%">From Date</th>
               <th width="10%">To Date</th>
               <th width="15%">Note </th>
-			  <th width="15%">Approver Comment </th>
+			  <th width="25%">Approver Comment </th>
+			  <th width="10%"> Action </th>
             </tr>
 
 
 			<c:if test="${not empty pendingLeaveList}">
 				<c:forEach var="leave" items="${pendingLeaveList}" varStatus="row">
 					<tr class="${row.index % 2 == 0 ? 'even' : 'odd'}">
-						<td>${leave.leaveTypeId}</td>
+					<c:forEach var="type" items="${leaveType}" varStatus="row">
+						<c:if test="${type.getId() == leave.leaveTypeId}">
+							<td>
+								<input type="hidden" name="leave_id'" value="${type.leaveType}"/>
+							</td>
+						</c:if>
+					</c:forEach>
 						<td>${leave.fromDate}</td>
 						<td>${leave.toDate}</td>
 						<td>${leave.note}</td>
-						<td>${leave.approverComment}</td>
+						<td><input name="Acomment_${leave.leaveId}" id="Acomment_${leave.leaveId}" size="70" value=""/></td>
+						<td><input type="submit" value="Approve" onclick="postReq('APPROVE','Acomment_${leave.leaveId}','${leave.leaveId}')" class="yesButton"/> <input type="submit" onclick="postReq('REJECT','Acomment_${leave.leaveId}','${leave.leaveId}')" value="Reject" class="yesButton"/></td>
 					</tr>
 				</c:forEach>
 			</c:if>
           </thead>
-	        </table>
+	    </table>
+	</form>
 		
 		
 		<table id="results" class="results">
@@ -133,7 +164,13 @@
             </tr>
 			<c:forEach var="leave" items="${appliedLeave}" varStatus="row">
 				<tr class="${row.index % 2 == 0 ? 'even' : 'odd'}">
-					<td>${leave.leaveTypeId}</td>
+						<c:forEach var="type" items="${leaveType}" varStatus="row">
+							<c:if test="${type.id == leave.leaveTypeId}">
+								<td>
+									${type.leaveType}
+								</td>
+							</c:if>
+						</c:forEach>
 					<td>${leave.fromDate}</td>
 					<td>${leave.toDate}</td>
 					<td>${leave.note}</td>
