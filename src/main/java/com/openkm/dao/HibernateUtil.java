@@ -129,7 +129,8 @@ public class HibernateUtil {
 		cfg.addAnnotatedClass(Plugin.class);
 		cfg.addAnnotatedClass(LeaveDetail.class);
 		cfg.addAnnotatedClass(LeaveType.class);
-		
+		cfg.addAnnotatedClass(ServiceDetail.class);
+		cfg.addAnnotatedClass(ServiceType.class);		
 		return cfg;
 	}
 
