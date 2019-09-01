@@ -32,14 +32,14 @@
 	}
 	
    </script>
-  <title>Leave Management</title>
+  <title>Service Management</title>
   
 <script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
   
 </head>
 <body>
 
-        Leave Application
+        Service Application
         <br/>
       <form action="Service" method="post">
       
