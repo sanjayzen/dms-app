@@ -39,6 +39,10 @@ public class LeaveDetail implements Serializable {
 
 	@Column(name = "APPROVER_COMMENT")
 	private String approverComment;
+	
+	
+	@Column(name = "STATUS")
+	private String isApproved;
 
 	public int getLeaveId() {
 		return leaveId;
@@ -113,7 +117,14 @@ public class LeaveDetail implements Serializable {
 	public void setApproverComment(String approverComment) {
 		this.approverComment = approverComment;
 	}
-	
 
+	public String getIsApproved() {
+		return isApproved;
+	}
+
+	public void setIsApproved(String isApproved) {
+		this.isApproved = isApproved;
+	}
+	
 
 }
