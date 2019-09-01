@@ -69,6 +69,11 @@
         <img src="img/toolbar/service-mgmt.png">
       </a>
     </li>
+     <li>
+      <a target="frame" href="/dms/admin/calendarview.html"  title="Leave">
+        <img src="img/toolbar/calender.png">
+      </a>
+    </li>
     <c:if test="${isMultipleInstancesAdmin}">
       <li>
         <a target="frame" href="DatabaseQuery" title="Database query">
