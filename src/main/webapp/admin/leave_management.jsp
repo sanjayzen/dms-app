@@ -45,13 +45,13 @@
       
         <input type="hidden" name="action" value="AddLeave"/>
 
-		<table class="form" width="372px">
-          <tr>
-            <td>Leave Type Id: 
+		<table class="form" width="500px">
+          <tr width="100px">
+            <td>Select Type: 
 
 			</td>
-            <td width="100%">
-			<select id="leave_type_id" name="leave_type_id" size="4">
+            <td>
+			<select id="leave_type_id" name="leave_type_id">
 				<c:forEach var="lv" items="${leaveType}" varStatus="row">
 					<option value="${lv.id}">
 						${lv.leaveType}
@@ -77,11 +77,11 @@
             <td><input class=":required :only_on_blur" name="note" size="25" value="${usr.name}"/></td>
           </tr>
           <tr>
-            <td>Leave Type Id: 
+            <td>Select Approver: 
 
 			</td>
             <td width="100%">
-			<select id="approver" name="approver" size="4">
+			<select id="approver" name="approver">
 				<c:forEach var="user" items="${userList}" varStatus="row">
 					<option value="${user.id}">
 						${user.id}
